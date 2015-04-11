@@ -2,6 +2,7 @@
 {-# LANGUAGE LambdaCase #-}
 module Nero.Wai where
 
+import Nero.Prelude
 import Control.Monad ((<=<))
 import Control.Arrow (first, second)
 import Data.Maybe (fromMaybe, maybeToList)
@@ -22,7 +23,6 @@ import Nero.Url as Nero(Url(..), Scheme(..), Location(..))
 import Nero.Response as Nero(_Ok, _MovedPermanently, _NotFound)
 import qualified Nero.Param (fromList)
 import qualified Nero.Binary as Nero (render)
-import Control.Lens ((^?!))
 import Control.Lens.Extras (is)
 
 type Headers = Map ByteString ByteString
