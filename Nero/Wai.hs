@@ -1,6 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE LambdaCase #-}
-module Nero.Wai (waify) where
+module Nero.Wai
+  (
+  -- * Nero to WAI adapter
+    waify
+  ) where
 
 import Nero.Prelude
 import Control.Arrow (first, second)
@@ -22,6 +26,7 @@ import qualified Nero.Param (fromList)
 import qualified Nero.Binary as Nero (render)
 import Control.Lens.Extras (is)
 
+-- | Adapt a @Nero@ 'Nero.Application' to a @WAI@ 'Wai.Application'.
 waify :: Nero.Application -> Wai.Application
 waify neroApp = waifyResponse . (neroApp <=< fromWaiRequest)
 

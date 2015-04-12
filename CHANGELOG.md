@@ -4,7 +4,8 @@ follows the formatting recommendations from [Keep a
 CHANGELOG](http://keepachangelog.com/). This project adheres to [Semantic
 Versioning](http://semver.org/).
 
-## [Unreleased][unreleased]
+## [0.3][0.3]
 ### Added
+- Bare minimal `waify` function.
 -
-[unreleased]: https://github.com/plutonbrb/nero-wai/compare/...HEAD
+[0.3]: https://github.com/plutonbrb/nero-wai/compare/fde9a0d7...0.3

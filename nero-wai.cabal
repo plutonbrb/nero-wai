@@ -2,9 +2,6 @@ name:                nero-wai
 version:             0.3
 synopsis:            WAI adapter for Nero server applications
 description:
-  This package provides a WAI adapter for running @Nero@ server applications
-  with any WAI compatible handler.
-  .
   Check the <https://github.com/plutonbrb/nero-wai#nero-wai README> for a more
   detailed explanation.
 homepage:            https://github.com/plutonbrb/nero-wai
@@ -29,7 +26,7 @@ library
   build-depends:       base >=4.6 && <4.9,
                        bytestring,
                        text,
-                       nero >=0.2,
+                       nero >=0.3,
                        lens,
                        http-types,
                        wai,
