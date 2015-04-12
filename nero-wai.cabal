@@ -28,9 +28,8 @@ library
   exposed-modules:     Nero.Wai
   build-depends:       base >=4.6 && <4.9,
                        bytestring,
-                       containers,
                        text,
-                       nero >= 0.2,
+                       nero >=0.2,
                        lens,
                        http-types,
                        wai,

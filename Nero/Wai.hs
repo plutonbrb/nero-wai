@@ -1,16 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE LambdaCase #-}
-module Nero.Wai where
+module Nero.Wai (waify) where
 
 import Nero.Prelude
-import Control.Monad ((<=<))
 import Control.Arrow (first, second)
 import Data.Maybe (fromMaybe, maybeToList)
-import Data.ByteString (ByteString)
 import qualified Data.ByteString.Lazy as L
 import qualified Data.Text.Lazy as T (fromStrict)
 import Data.Text.Lazy.Encoding (decodeUtf8)
-import Data.Map (Map)
 import Network.HTTP.Types as Wai
   ( ok200
   , notFound404
@@ -24,8 +21,6 @@ import Nero.Response as Nero(_Ok, _MovedPermanently, _NotFound)
 import qualified Nero.Param (fromList)
 import qualified Nero.Binary as Nero (render)
 import Control.Lens.Extras (is)
-
-type Headers = Map ByteString ByteString
 
 waify :: Nero.Application -> Wai.Application
 waify neroApp = waifyResponse . (neroApp <=< fromWaiRequest)
