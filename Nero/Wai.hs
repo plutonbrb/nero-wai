@@ -27,7 +27,7 @@ import qualified Nero.Binary as Nero (render)
 import Control.Lens.Extras (is)
 
 -- | Adapt a @Nero@ 'Nero.Application' to a @WAI@ 'Wai.Application'.
-waify :: Nero.Application -> Wai.Application
+waify :: Nero.Application IO -> Wai.Application
 waify neroApp = waifyResponse . (neroApp <=< fromWaiRequest)
 
 fromWaiRequest :: Wai.Request -> IO Nero.Request
